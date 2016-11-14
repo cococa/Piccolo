@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Piccolo.iml" filepath="$PROJECT_DIR$/Piccolo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/piccoloplug/piccoloplug.iml" filepath="$PROJECT_DIR$/piccoloplug/piccoloplug.iml" />
     </modules>
   </component>
 </project>

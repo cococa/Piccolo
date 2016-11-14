@@ -10,7 +10,7 @@ public class Modifyer {
         println "injectDir---------"
         pool.appendClassPath(path)
         pool.appendClassPath("/Users/sj/Library/Android/sdk/platforms/android-24/android.jar")
-        pool.appendClassPath("/Users/sj/Documents/myApp/LearmProject/Android/MixpanelTest/app/build/intermediates/classes/release")
+//        pool.appendClassPath("/Users/sj/Documents/myApp/LearmProject/Android/MixpanelTest/app/build/intermediates/classes/release")
 
 
         CtClass viewClass = pool.getCtClass("android.view.View")
@@ -50,7 +50,7 @@ public class Modifyer {
                         try {
 //                            println "injectDir---------" + c.getName()
                             CtMethod method = c.getDeclaredMethod("onClick", [viewClass] as CtClass[])
-                            method.insertBefore("com.cocoa.test.Logger.log();");
+                            method.insertBefore("com.cocoa.piccolo.piccolo.Logger.log(view);");
 
                         } catch (Exception e) {
                             println "injectDir---------" + e.toString()

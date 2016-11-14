@@ -1,16 +1,29 @@
-package com.hahah.test
+package com.cocoa.piccolo
 
 import com.android.build.gradle.AppExtension
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import org.gradle.api.tasks.compile.JavaCompile
 
 public class PluginImpl implements Plugin<Project> {
+
+
     void apply(Project project) {
-//        project.task('testTask') << {
+
+
+        project.extensions.create('tt', Params)
+        println "my name is ${project.tt.username}"
+
         def android = project.extensions.findByType(AppExtension)
         android.registerTransform(new MyTransform(project))
+
+  //      project.task('testTask') << {
+
+//            Params params = project.extensions.findByType(Params)
+//            def parasm = project.extensions.findByType('params')
+//
+//            print "my name is " + params.username
 //        }
+
 //        project.afterEvaluate {
 //            android.applicationVariants.each { variant ->
 //                String name = variant.name as String

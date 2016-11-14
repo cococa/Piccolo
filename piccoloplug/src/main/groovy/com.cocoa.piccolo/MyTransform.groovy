@@ -48,9 +48,9 @@ public class MyTransform extends Transform{
         // Transform的inputs有两种类型，一种是目录，一种是jar包，要分开遍历
         inputs.each {TransformInput input ->
             //对类型为“文件夹”的input进行遍历
-            input.directoryInputs.each {DirectoryInput directoryInput->
+            input.directoryInputs.each { DirectoryInput directoryInput->
                 //文件夹里面包含的是我们手写的类以及R.class、BuildConfig.class以及R$XXX.class等
-                Modifyer.injectDir(directoryInput.file.absolutePath,"com/cocoa/test")
+                Modifyer.injectDir(directoryInput.file.absolutePath,"com/cocoa/piccolo/piccolo")
 
                 // 获取output目录
                 def dest = outputProvider.getContentLocation(directoryInput.name,
@@ -61,7 +61,7 @@ public class MyTransform extends Transform{
                 FileUtils.copyDirectory(directoryInput.file, dest)
             }
             //对类型为jar文件的input进行遍历
-            input.jarInputs.each {JarInput jarInput->
+            input.jarInputs.each { JarInput jarInput->
 
                 //jar文件一般是第三方依赖库jar文件
 

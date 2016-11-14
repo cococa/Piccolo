@@ -1,15 +1,15 @@
 
 buildscript {
     repositories {
-        jcenter()
-//        maven {
-//            url uri('./repo')
-//        }
+        mavenCentral()
+        maven {
+            url uri('./repo')
+        }
 
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.2.1'
-        //classpath 'com.hahah.test:plug:1.0.0'
+        classpath 'com.cocoa.piccolo:piccoloplug:1.0.0'
     }
 }
 
