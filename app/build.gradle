@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.cocoa.piccolo'
+//apply plugin: 'com.cocoa.piccolo'
 
 android {
     compileSdkVersion 24
@@ -29,9 +29,6 @@ dependencies {
     testCompile 'junit:junit:4.12'
 }
 
-
-
-
-tt {
-    username = 'cocoa'
-}
+//tt{
+//    username = 'cocoa--0-'
+//}

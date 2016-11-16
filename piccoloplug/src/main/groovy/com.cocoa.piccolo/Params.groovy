@@ -1,8 +1,12 @@
 package com.cocoa.piccolo
 
-public class Params{
+import org.gradle.api.Project
 
-    def username = "shenjun"
+
+public class Params {
+
+
+    def username
 
 
 }

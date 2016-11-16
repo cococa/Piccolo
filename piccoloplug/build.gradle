@@ -1,7 +1,7 @@
 apply plugin: 'groovy'
 apply plugin: 'maven'
 
-
+apply from: '../bintray.gradle'
 
 dependencies {
     compile gradleApi()//gradle sdk
@@ -17,10 +17,11 @@ repositories {
 group='com.cocoa.piccolo'
 version='1.0.0'
 
-uploadArchives {
-    repositories {
-        mavenDeployer {
-            repository(url: uri('../repo'))
-        }
-    }
-}
+//uploadArchives {
+//    repositories {
+//        mavenDeployer {
+//            repository(url: uri('../repo'))
+//        }
+//    }
+//}
+

@@ -10,7 +10,7 @@ public class Modifyer {
         println "injectDir---------"
         pool.appendClassPath(path)
         pool.appendClassPath("/Users/sj/Library/Android/sdk/platforms/android-24/android.jar")
-//        pool.appendClassPath("/Users/sj/Documents/myApp/LearmProject/Android/MixpanelTest/app/build/intermediates/classes/release")
+//      pool.appendClassPath("/Users/sj/Documents/myApp/LearmProject/Android/MixpanelTest/app/build/intermediates/classes/release")
 
 
         CtClass viewClass = pool.getCtClass("android.view.View")
@@ -20,14 +20,10 @@ public class Modifyer {
             dir.eachFileRecurse { File file ->
                 String filePath = file.absolutePath
 
-
-
-                //确保当前文件是class文件，并且不是系统自动生成的class文件
                 if (filePath.endsWith(".class")
                         && !filePath.contains('R$')
                         && !filePath.contains('R.class')
                         && !filePath.contains("BuildConfig.class")) {
-                    // 判断当前目录是否是在我们的应用包里面
                     int index = filePath.indexOf(packageName);
 
                     boolean isMyPackage = index != -1;
@@ -37,7 +33,6 @@ public class Modifyer {
                         int end = filePath.length() - 6 // .class = 6
                         String className = filePath.substring(index, end)
                                 .replace('\\', '.').replace('/', '.')
-                        //开始修改class文件
                         CtClass c = pool.getCtClass(className)
 
 
